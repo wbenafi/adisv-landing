@@ -12,6 +12,7 @@ export interface SiteConfig {
   contactEmail: string;
   facebookUrl?: string;
   instagramUrl?: string;
+  whatsappUrl?: string;
 }
 
 export interface Project {
@@ -52,8 +53,9 @@ export const mockSiteConfig: SiteConfig = {
   contactAddress: 'Calle Principal, San Vicente, Costa Rica',
   contactPhone: '+506 2222-3333',
   contactEmail: 'info@adisvcostarica.org',
-  facebookUrl: 'https://facebook.com/adisvcostarica',
-  instagramUrl: 'https://instagram.com/adisvcostarica',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61575102152606',
+  instagramUrl: 'https://www.instagram.com/adisv6/',
+  whatsappUrl: 'https://wa.me/+50661570794',
 };
 
 export const mockProjects: Project[] = [

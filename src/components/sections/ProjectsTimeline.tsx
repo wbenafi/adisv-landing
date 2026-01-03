@@ -24,7 +24,7 @@ export default function ProjectsTimeline() {
   }, [filteredProjects]);
 
   return (
-    <section id="proyectos" className="py-20 sm:py-28 bg-gradient-to-b from-background to-surface relative">
+    <section id="proyectos" className="py-20 sm:py-28 bg-gradient-to-b from-background to-surface relative max-w-[100vw] overflow-x-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
@@ -102,28 +102,6 @@ export default function ProjectsTimeline() {
             />
           ))}
         </div>
-
-        {/* Legend */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 flex flex-wrap justify-center gap-6 text-sm"
-        >
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 bg-green-500 rounded-full" />
-            <span className="text-text-secondary">Completado</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 bg-amber-500 rounded-full" />
-            <span className="text-text-secondary">En Progreso</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 bg-blue-500 rounded-full" />
-            <span className="text-text-secondary">Planificado</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

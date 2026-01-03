@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { mockSiteConfig } from '@/lib/types';
 
 const navLinks = [
   { name: 'Inicio', href: '#inicio' },
@@ -18,7 +19,7 @@ const navLinks = [
 const socialLinks = [
   {
     name: 'Facebook',
-    href: 'https://facebook.com/adisvcostarica',
+    href: mockSiteConfig.facebookUrl,
     color: 'hover:bg-[#1877F2]',
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -28,7 +29,7 @@ const socialLinks = [
   },
   {
     name: 'Instagram',
-    href: 'https://instagram.com/adisvcostarica',
+    href: mockSiteConfig.instagramUrl,
     color: 'hover:bg-[#E4405F]',
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -38,7 +39,7 @@ const socialLinks = [
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/50622223333',
+    href: mockSiteConfig.whatsappUrl,
     color: 'hover:bg-[#25D366]',
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -72,7 +73,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 max-w-[100vw] ${
         isScrolled
           ? 'bg-surface/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
@@ -182,7 +183,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-surface/98 backdrop-blur-lg border-t border-primary/10"
+            className="md:hidden bg-surface border-t border-primary/10"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link, index) => (
