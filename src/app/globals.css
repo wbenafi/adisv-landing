@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #12164b;
+  --primary-light: #1e2463;
+  --secondary: #f89909;
+  --secondary-light: #ffa726;
+  --background: #fafafa;
+  --surface: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  
+  --font-playfair: 'Playfair Display', serif;
+  --font-source: 'Source Sans 3', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-source);
+  background-color: var(--background);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Selection */
+::selection {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* Playfair Display Font Class */
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(248, 153, 9, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(248, 153, 9, 0.2);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth Image Loading */
+img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[data-loaded="false"] {
+  opacity: 0;
+}
+
+img[data-loaded="true"] {
+  opacity: 1;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  
+  .bg-secondary-light {
+    background-color: var(--secondary-light);
+  }
+  
+  .bg-background {
+    background-color: var(--background);
+  }
+  
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .text-primary-light {
+    color: var(--primary-light);
+  }
+  
+  .text-secondary {
+    color: var(--secondary);
+  }
+  
+  .text-secondary-light {
+    color: var(--secondary-light);
+  }
+  
+  .text-text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .border-primary {
+    border-color: var(--primary);
+  }
+  
+  .border-secondary {
+    border-color: var(--secondary);
+  }
+  
+  .fill-primary {
+    fill: var(--primary);
+  }
+  
+  .fill-secondary {
+    fill: var(--secondary);
+  }
+  
+  .fill-background {
+    fill: var(--background);
+  }
+  
+  .fill-surface {
+    fill: var(--surface);
+  }
+  
+  .ring-secondary {
+    --tw-ring-color: var(--secondary);
+  }
+  
+  .focus\:ring-secondary:focus {
+    --tw-ring-color: var(--secondary);
+  }
+  
+  .hover\:bg-primary-light:hover {
+    background-color: var(--primary-light);
+  }
+  
+  .hover\:bg-secondary-light:hover {
+    background-color: var(--secondary-light);
+  }
+  
+  .hover\:text-primary:hover {
+    color: var(--primary);
+  }
+  
+  .hover\:text-secondary:hover {
+    color: var(--secondary);
+  }
+  
+  .hover\:border-secondary:hover {
+    border-color: var(--secondary);
+  }
+  
+  .shadow-secondary\/30 {
+    --tw-shadow-color: rgba(248, 153, 9, 0.3);
+  }
+  
+  .hover\:shadow-secondary\/30:hover {
+    --tw-shadow-color: rgba(248, 153, 9, 0.3);
+  }
+  
+  .group-hover\:bg-primary:hover {
+    background-color: var(--primary);
+  }
+  
+  .group-hover\:bg-secondary:hover {
+    background-color: var(--secondary);
+  }
+}
